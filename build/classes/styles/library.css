@@ -1,0 +1,94 @@
+.welcomescreen{
+    -fx-background-image: url('../images/wellcome.jpg');
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
+/**
+ * Wwlcome page
+ */
+.welcomeTxtBg{
+    -fx-background-color: #000;
+    -fx-opacity: .5;
+}
+.headerTxtWhite{
+	-fx-text-fill:#ffffff;
+}
+.offWhiteBody{
+    -fx-background-color: #F2EFDF;
+}
+
+
+.blueTxt{
+    -fx-text-fill: #322A66;
+}
+
+
+
+.blackborderandtext{
+    -fx-border-color: #000;
+    -fx-text-fill: #000;
+}
+
+
+.headerTxtBg{
+    -fx-background-color: #342C6B;
+}
+
+.blueborderpane{
+    -fx-background-color: transparent;
+    -fx-border-color: #342C6B;
+    -fx-border-width: 3px;
+}
+
+.blueLabel{
+    -fx-background-color: #342C6B;
+    -fx-text-fill: #fff;
+    -fx-padding: 20px;
+}
+
+
+
+/**
+ * Buttons
+ */
+
+.borderbtn{
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-width: 3px;
+    -fx-text-fill: #fff;
+}
+.borderbtn:hover{
+    -fx-background-color: #34495e;
+    -fx-text-fill: #fff;
+}
+
+.borderbtnBlack{
+    -fx-background-color: transparent;
+    -fx-border-color: #000;
+    -fx-border-width: 3px;
+    -fx-text-fill: #000;
+}
+.borderbtnBlack:hover{
+    -fx-background-color: #000;
+    -fx-border-color: #000;
+    -fx-border-width: 3px;
+    -fx-text-fill: #fff;
+}
+
+/**
+ * Input fields
+ */
+
+.input{
+    -fx-border-width: 2px;
+    -fx-border-color: #020455;
+    -fx-background-color: #eee;
+}
+
+.pageHeaderBlue{
+    -fx-background-color: #020455;
+}
+
