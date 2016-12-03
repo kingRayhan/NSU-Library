@@ -56,7 +56,7 @@
          </font>
       </Label>
       <TextField fx:id="book_id_field" layoutX="232.0" layoutY="213.0" prefHeight="45.0" prefWidth="99.0" styleClass="input" stylesheets="@../styles/library.css" />
-      <Button layoutX="346.0" layoutY="213.0" mnemonicParsing="false" onAction="#save" prefHeight="45.0" prefWidth="119.0" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SEARCH">
+      <Button layoutX="346.0" layoutY="213.0" mnemonicParsing="false" onAction="#fetch_btn" prefHeight="45.0" prefWidth="119.0" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SEARCH">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
