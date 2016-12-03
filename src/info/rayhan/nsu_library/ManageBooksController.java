@@ -36,14 +36,6 @@ public class ManageBooksController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void booklist(ActionEvent event) throws IOException {
-        Parent x=FXMLLoader.load(getClass().getResource("/views/BookList.fxml")); 
-        Scene  M= new Scene(x);
-        Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
-        app.setScene (M);
-        app.show();
-    }
 
     @FXML
     private void addBook(ActionEvent event) {
@@ -58,6 +50,15 @@ public class ManageBooksController implements Initializable {
     @FXML
     private void BackToAdminPanel(ActionEvent event) throws IOException {
         Parent x=FXMLLoader.load(getClass().getResource("/views/AdminPanel.fxml")); 
+        Scene  M= new Scene(x);
+        Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
+        app.setScene (M);
+        app.show();
+    }
+
+    @FXML
+    private void BookList(ActionEvent event) throws IOException {
+        Parent x=FXMLLoader.load(getClass().getResource("/views/BookList.fxml")); 
         Scene  M= new Scene(x);
         Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
         app.setScene (M);

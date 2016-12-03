@@ -29,22 +29,25 @@ import javax.swing.JOptionPane;
  *
  * @author kingRayhan
  */
-public class DeleteStudentController implements Initializable {
+public class EditStudentController implements Initializable {
     private DbConnection dc;
     
-    
     @FXML
-    private TextField student_id_field;
+    private TextField student_id_fetch_field;
     @FXML
     private Label username;
     @FXML
-    private Label username_label;
+    private TextField username_field;
     @FXML
-    private Label student_id_label;
+    private TextField student_id_field;
     @FXML
-    private Label email_label;
+    private TextField email_field;
     @FXML
-    private Label department_label;
+    private TextField department_field;
+    @FXML
+    private Label hideen_student_id;
+    @FXML
+    private Label headerLabel;
 
     /**
      * Initializes the controller class.
@@ -56,10 +59,10 @@ public class DeleteStudentController implements Initializable {
 
     @FXML
     private void BACK(ActionEvent event) throws IOException {
-        Parent x=FXMLLoader.load(getClass().getResource("/views/ManageStudents.fxml")); 
-        Scene  M= new Scene(x);
-        Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
-        app.setScene (M);
+        Parent x = FXMLLoader.load(getClass().getResource("/views/ManageStudents.fxml"));
+        Scene M = new Scene(x);
+        Stage app = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app.setScene(M);
         app.show();
     }
 
@@ -80,17 +83,19 @@ public class DeleteStudentController implements Initializable {
         dc = new DbConnection();
         try {
             Connection conn = dc.Connect();
-            int Student_id = Integer.parseInt(student_id_field.getText());
+            int Student_id = Integer.parseInt(student_id_fetch_field.getText());
             
             String sql = "SELECT * FROM `students` WHERE `student_id` = "+Student_id;
             
             ResultSet rs = conn.createStatement().executeQuery(sql);
 
             if(rs.next()){
-                username_label.setText(rs.getString(2));
-                student_id_label.setText(rs.getString(4));
-                email_label.setText(rs.getString(5));
-                department_label.setText(rs.getString(6));
+                username_field.setText(rs.getString(2));
+                student_id_field.setText(rs.getString(4));
+                email_field.setText(rs.getString(5));
+                department_field.setText(rs.getString(6));
+                hideen_student_id.setText(""+rs.getString(1));
+
             }else{
                 JOptionPane.showMessageDialog(null, "Doesn't find any student associating with given student id","ERROR",JOptionPane.ERROR_MESSAGE);
             }
@@ -100,26 +105,23 @@ public class DeleteStudentController implements Initializable {
     }
 
     @FXML
-    private void deleteStudent(ActionEvent event) throws IOException {
+    private void updateBtn(ActionEvent event) {
         dc = new DbConnection();
         try {
             Connection conn = dc.Connect();
-            int Student_id = Integer.parseInt(student_id_field.getText());
-            String sql = "DELETE FROM `students` WHERE `students`.`student_id` = "+Student_id;            
-            conn.createStatement().executeUpdate(sql);
-
-            JOptionPane.showMessageDialog(null, "Student Deleted","Success",JOptionPane.ERROR_MESSAGE);
-
-            Parent x=FXMLLoader.load(getClass().getResource("/views/ManageStudents.fxml")); 
-            Scene  M= new Scene(x);
-            Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
-            app.setScene (M);
-            app.show();
+            String new_username = "rayhan";
+            String new_email = "rayhan";
+            String new_department = "rayhan";
+            String new_student_id = "123";
+            String row_id = hideen_student_id.getText();
             
-        } catch (SQLException ex){
+            String sql = "UPDATE `students` SET `username` = 'rayhanffffff', `password` = '123454', `student_id` = '15205276', `email` = 'rayhan0954', `department` = 'cse4' WHERE `students`.`id` = 9";//5
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.executeUpdate();
+            
+        } catch (SQLException ex) {
             System.err.println("Error"+ex);
         }  
     }
     
 }
-    

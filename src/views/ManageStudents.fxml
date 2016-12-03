@@ -57,7 +57,7 @@
             <Image url="@../images/EDIT.png" />
          </image>
       </ImageView>
-      <Button layoutX="409.0" layoutY="398.0" mnemonicParsing="false" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="EDIT STUDENT">
+      <Button layoutX="409.0" layoutY="398.0" mnemonicParsing="false" onAction="#editStudent" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="EDIT STUDENT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -67,7 +67,7 @@
             <Image url="@../images/DELETE.png" />
          </image>
       </ImageView>
-      <Button layoutX="555.0" layoutY="398.0" mnemonicParsing="false" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="DELETE STUDENT">
+      <Button layoutX="555.0" layoutY="398.0" mnemonicParsing="false" onAction="#deleteStudent" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="DELETE STUDENT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

@@ -55,5 +55,23 @@ public class ManageStudentsController implements Initializable {
         app.setScene (M);
         app.show();
     }
+
+    @FXML
+    private void deleteStudent(ActionEvent event) throws IOException {
+        Parent x=FXMLLoader.load(getClass().getResource("/views/DeleteStudent.fxml")); 
+        Scene  M= new Scene(x);
+        Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
+        app.setScene (M);
+        app.show();
+    }
+
+    @FXML
+    private void editStudent(ActionEvent event) throws IOException {
+        Parent x=FXMLLoader.load(getClass().getResource("/views/EditStudent.fxml")); 
+        Scene  M= new Scene(x);
+        Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
+        app.setScene (M);
+        app.show();
+    }
     
 }

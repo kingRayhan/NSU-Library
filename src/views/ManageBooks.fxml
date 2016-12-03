@@ -37,7 +37,7 @@
             <Image url="@../images/list.png" />
          </image>
       </ImageView>
-      <Button layoutX="136.0" layoutY="398.0" mnemonicParsing="false" onAction="#booklist" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="BOOK LIST">
+      <Button layoutX="136.0" layoutY="398.0" mnemonicParsing="false" onAction="#BookList" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="BOOK LIST">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
