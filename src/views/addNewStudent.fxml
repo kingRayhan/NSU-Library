@@ -22,7 +22,7 @@
             </Label>
          </children>
       </Pane>
-      <Label layoutX="267.0" layoutY="148.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="ADD NEW STUDENT">
+      <Label fx:id="add_txt" layoutX="267.0" layoutY="148.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="ADD NEW STUDENT">
          <font>
             <Font name="LemonMilk" size="24.0" />
          </font>

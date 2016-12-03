@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package info.rayhan.nsu_library;
 
 import java.io.IOException;
@@ -19,10 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import static javax.management.remote.JMXConnectorFactory.connect;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -43,9 +39,14 @@ public class AddNewStudentController implements Initializable {
     private TextField student_id;
     @FXML
     private TextField department;
+    @FXML
+    private Label add_txt;
 
     /**
      * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -54,44 +55,58 @@ public class AddNewStudentController implements Initializable {
 
     @FXML
     private void save(ActionEvent event) throws IOException, SQLException {
+        /**
+         * Instantiate database class
+         */
         dc = new DbConnection();
+        try {
+            /**
+             * Get values from fields
+             */
+            String username_field = username.getText();
+            String password_field = password.getText();
+            String email_field = email.getText();
+            int student_id_field = Integer.parseInt(student_id.getText());
+            String department_field = department.getText();
 
-        String username_field   = username.getText();
-        String password_field   = password.getText();
-        String email_field      = email.getText();
-        String student_id_field = student_id.getText();
-        String department_field = department.getText();
-        
-        PreparedStatement statement;
-        Connection conn = dc.Connect();
-        String sql = "INSERT INTO `students` "
-                + "(`id`, `username`, `password`, `student_id`, `email`, `department`) "
-                + "VALUES "
-                + "(NULL, ?, ?, ?, ?, ?)";
-        
-        statement = conn.prepareStatement(sql);
-        
-        statement.setString(1, username_field);
-        statement.setString(2, password_field);
-        statement.setString(3, student_id_field);
-        statement.setString(4, department_field);
-        statement.execute();
-        statement.close();
-        
-//        try {
-//            Connection conn = dc.Connect();
-//            ResultSet rs;
-//            rs = conn.createStatement().executeQuery("INSERT INTO `students` (`id`, `username`, `password`, `student_id`, `email`, `department`) VALUES (NULL, 'sfgsd', '?', '?', '?', '?')");
-//
-//        } catch (SQLException ex) {
-//            System.err.println("Error" + ex);
-//        }
-    }
-    
+            Connection conn = dc.Connect();
+            String sql = "INSERT INTO `students` "
+                    + "(`id`, `username`, `password`, `student_id`, `email`, `department`) "
+                    + "VALUES (NULL, ?, ? , ? , ? , ? )";
+            PreparedStatement statement = conn.prepareStatement(sql);
+
+            statement.setString(1, username_field);
+            statement.setString(2, password_field);
+            statement.setInt(3, student_id_field);
+            statement.setString(4, email_field);
+            statement.setString(5, department_field);
+            statement.executeUpdate();
+            
+            
+            /**
+             * Show success popup message by JOption Pane
+             */
+            JOptionPane.showMessageDialog(null, "NEW STUDENT ADDED TO THE DATABASE","SUCCESS",JOptionPane.PLAIN_MESSAGE);
+            /**
+             * Clear all filds
+             */
+            username.setText("");
+            password.setText("");
+            email.setText("");
+            student_id.setText("");
+            department.setText("");
+            
+            
+        } catch (SQLException ex) {
+            System.err.println("Error" + ex);
+        }
+
+    }//
+
     /**
-     * 
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void back(ActionEvent event) throws IOException {
@@ -101,10 +116,11 @@ public class AddNewStudentController implements Initializable {
         app.setScene(M);
         app.show();
     }
+
     /**
-     * 
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void backToAdmin(ActionEvent event) throws IOException {

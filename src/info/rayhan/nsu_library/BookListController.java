@@ -35,13 +35,9 @@ public class BookListController implements Initializable {
     private DbConnection dc;
     
     
-    @FXML
     private TableView<BookList> BookListTable;
-    @FXML
     private TableColumn<BookList, String> IdColumn;
-    @FXML
     private TableColumn<BookList, String> bookNameColumn;
-    @FXML
     private TableColumn<BookList, String> AuthorNameColumn;
     
     private ObservableList<BookList> data;
