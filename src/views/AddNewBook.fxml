@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="750.0" stylesheets="@../styles/library.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="info.rayhan.nsu_library.AddNewBookController">
+   <children>
+      <Pane layoutX="-4.0" layoutY="14.0" prefHeight="132.0" prefWidth="744.0" styleClass="pageHeaderBlue" stylesheets="@../styles/library.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="249.0" layoutY="38.0" styleClass="headerTxtWhite" stylesheets="@../styles/library.css" text="NSU LIBRARY">
+               <font>
+                  <Font name="LemonMilk" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="add_txt" layoutX="267.0" layoutY="148.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="ADD NEW STUDENT">
+         <font>
+            <Font name="LemonMilk" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="269.0" layoutY="197.0" prefHeight="2.0" prefWidth="200.0" />
+      <Group layoutX="202.0" layoutY="519.0" />
+      <Label layoutX="113.0" layoutY="258.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="BOOK NAME">
+         <font>
+            <Font name="Aharoni Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="BookName_field" layoutX="232.0" layoutY="245.0" prefHeight="45.0" prefWidth="355.0" styleClass="input" stylesheets="@../styles/library.css" />
+      <Label layoutX="112.0" layoutY="322.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="AUTHOR">
+         <font>
+            <Font name="Aharoni Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="346.0" layoutY="530.0" mnemonicParsing="false" onAction="#save" prefHeight="45.0" prefWidth="119.0" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SAVE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="7.0" layoutY="140.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Button layoutX="56.0" layoutY="140.0" mnemonicParsing="false" onAction="#backToAdmin" text="Admin page" />
+      <TextField fx:id="AuthorName_field" layoutX="232.0" layoutY="309.0" prefHeight="45.0" prefWidth="355.0" styleClass="input" stylesheets="@../styles/library.css" />
+   </children>
+</AnchorPane>
