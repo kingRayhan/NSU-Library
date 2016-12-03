@@ -52,7 +52,7 @@
                   <Image url="@../images/zoom-out.png" />
                </image>
             </ImageView>
-            <Button layoutX="368.0" layoutY="252.0" mnemonicParsing="false" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SEARCH BOOKS">
+            <Button layoutX="368.0" layoutY="252.0" mnemonicParsing="false" onAction="#searchBooks" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SEARCH BOOKS">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -60,5 +60,14 @@ public class AdminPanelController implements Initializable {
         app.setScene (M);
         app.show();
     }
+
+    @FXML
+    private void searchBooks(ActionEvent event) throws IOException {
+        Parent x=FXMLLoader.load(getClass().getResource("/views/SearchBook.fxml")); 
+        Scene  M= new Scene(x);
+        Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
+        app.setScene (M);
+        app.show();
+    }
     
 }
