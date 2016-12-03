@@ -51,11 +51,14 @@ public class AdminLoginController implements Initializable {
     private void Login(ActionEvent event) throws SQLException, IOException {
         dc = new DbConnection();
         try {
-            Connection conn = dc.Connect();
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM admins");
+            String name =  username.getText();
+            String pass =  password.getText();
             
-        String name =  username.getText();
-        String pass =  password.getText();
+            
+            Connection conn = dc.Connect();
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM admins WHERE username = '"+ name +"'");
+            
+            
         
         
         if(rs.next()){
