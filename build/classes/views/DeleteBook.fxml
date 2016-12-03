@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="750.0" stylesheets="@../styles/library.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="info.rayhan.nsu_library.DeleteBookController">
+   <children>
+      <Pane layoutX="-4.0" layoutY="14.0" prefHeight="132.0" prefWidth="744.0" styleClass="pageHeaderBlue" stylesheets="@../styles/library.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="249.0" layoutY="38.0" styleClass="headerTxtWhite" stylesheets="@../styles/library.css" text="NSU LIBRARY">
+               <font>
+                  <Font name="LemonMilk" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="add_txt" layoutX="296.0" layoutY="149.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="DELETE BOOK">
+         <font>
+            <Font name="LemonMilk" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="269.0" layoutY="197.0" prefHeight="2.0" prefWidth="200.0" />
+      <Group layoutX="202.0" layoutY="519.0" />
+      <Label layoutX="113.0" layoutY="308.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="BOOK NAME">
+         <font>
+            <Font name="Aharoni Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="112.0" layoutY="372.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="AUTHOR">
+         <font>
+            <Font name="Aharoni Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="323.0" layoutY="534.0" mnemonicParsing="false" onAction="#delete" prefHeight="45.0" prefWidth="119.0" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="DELETE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="7.0" layoutY="140.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Button layoutX="56.0" layoutY="140.0" mnemonicParsing="false" onAction="#backToAdmin" text="Admin page" />
+      <Label layoutX="113.0" layoutY="226.0" styleClass="headerTxtBlue" stylesheets="@../styles/library.css" text="BOOK ID">
+         <font>
+            <Font name="Aharoni Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="book_id_field" layoutX="232.0" layoutY="213.0" prefHeight="45.0" prefWidth="99.0" styleClass="input" stylesheets="@../styles/library.css" />
+      <Button layoutX="346.0" layoutY="213.0" mnemonicParsing="false" onAction="#fetch_btn" prefHeight="45.0" prefWidth="119.0" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SEARCH">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="bookName_label" layoutX="241.0" layoutY="306.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="authorName_label" layoutX="241.0" layoutY="368.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

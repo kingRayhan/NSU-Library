@@ -72,5 +72,14 @@ public class ManageBooksController implements Initializable {
         app.setScene (M);
         app.show();
     }
+
+    @FXML
+    private void DeleteBook(ActionEvent event) throws IOException {
+        Parent x=FXMLLoader.load(getClass().getResource("/views/DeleteBook.fxml")); 
+        Scene  M= new Scene(x);
+        Stage app=(Stage)((Node)event.getSource()).getScene().getWindow();
+        app.setScene (M);
+        app.show();
+    }
     
 }

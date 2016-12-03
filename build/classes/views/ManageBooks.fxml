@@ -67,7 +67,7 @@
             <Image url="@../images/DELETE.png" />
          </image>
       </ImageView>
-      <Button layoutX="560.0" layoutY="398.0" mnemonicParsing="false" onAction="#editBook" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="DELETE BOOKS">
+      <Button layoutX="560.0" layoutY="398.0" mnemonicParsing="false" onAction="#DeleteBook" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="DELETE BOOKS">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
