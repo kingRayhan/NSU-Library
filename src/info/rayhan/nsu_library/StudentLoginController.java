@@ -52,10 +52,13 @@ public class StudentLoginController implements Initializable {
         dc = new DbConnection();
         try {
             Connection conn = dc.Connect();
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM students");
             
-        String name =  username.getText();
-        String pass =  password.getText();
+            String name =  username.getText();
+            String pass =  password.getText();
+            
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM `students` WHERE `username` = '"+ name +"'");
+            
+
         
         
         if(rs.next()){
