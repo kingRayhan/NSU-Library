@@ -109,15 +109,24 @@ public class EditStudentController implements Initializable {
         dc = new DbConnection();
         try {
             Connection conn = dc.Connect();
-            String new_username = "rayhan";
-            String new_email = "rayhan";
-            String new_department = "rayhan";
-            String new_student_id = "123";
+            String new_username = username_field.getText();
+            String new_email = email_field.getText();
+            String new_department = department_field.getText();
+            String new_student_id = student_id_field.getText();
             String row_id = hideen_student_id.getText();
             
-            String sql = "UPDATE `students` SET `username` = 'rayhanffffff', `password` = '123454', `student_id` = '15205276', `email` = 'rayhan0954', `department` = 'cse4' WHERE `students`.`id` = 9";//5
+            String sql;
+            sql = "UPDATE `students` SET "
+                    + "`username` = '"+ new_username +"', "
+                    + "`student_id` = '"+ new_student_id +"', "
+                    + "`email` = '"+ new_email +"', "
+                    + "`department` = '"+ new_department +"' "
+                    + "WHERE "
+                    + "`students`.`id` = "+ row_id +"";
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Updated","SUCCESS",JOptionPane.PLAIN_MESSAGE);
             
         } catch (SQLException ex) {
             System.err.println("Error"+ex);
