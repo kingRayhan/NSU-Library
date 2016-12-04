@@ -3,9 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/kingRayhan/Documents/NetBeansProjects/NSU/src/info/rayhan/nsu_library/EditBookController.java</file>
-            <file>file:/C:/Users/kingRayhan/Documents/NetBeansProjects/NSU/src/info/rayhan/nsu_library/AddNewBookController.java</file>
-            <file>file:/C:/Users/kingRayhan/Documents/NetBeansProjects/NSU/src/views/EditBook.fxml</file>
+            <file>file:/C:/Users/kingRayhan/Documents/NetBeansProjects/NSU/src/info/rayhan/nsu_library/AdminLoginController.java</file>
+            <file>file:/C:/Users/kingRayhan/Documents/NetBeansProjects/NSU/src/info/rayhan/nsu_library/StudentLoginController.java</file>
         </group>
     </open-files>
 </project-private>
