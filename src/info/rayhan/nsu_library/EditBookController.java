@@ -5,6 +5,7 @@
  */
 package info.rayhan.nsu_library;
 
+import database.DbConnection;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
