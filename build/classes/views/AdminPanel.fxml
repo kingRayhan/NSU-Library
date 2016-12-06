@@ -72,6 +72,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Label fx:id="info" layoutX="501.0" layoutY="14.0" prefHeight="56.0" prefWidth="101.0" text="Label" />
          </children>
       </Pane>
    </children>

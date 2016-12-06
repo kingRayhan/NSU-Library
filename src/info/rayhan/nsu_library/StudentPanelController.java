@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -24,11 +25,20 @@ import javafx.stage.Stage;
  */
 public class StudentPanelController implements Initializable {
 
+    @FXML
+    private Label information;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-    }    
+    } 
+    
+    public void GetUser(String user){
+        information.setText(user);
+    }
+    
+    
 
     @FXML
     private void searchBooks(ActionEvent event) throws IOException {
