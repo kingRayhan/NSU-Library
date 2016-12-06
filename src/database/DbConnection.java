@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package database;
 
 import java.sql.Connection;
@@ -13,18 +8,19 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author admin
+ * @author KingRayhan
+ * @url rayhan.info
  */
 public class DbConnection {
 
     public Connection Connect() {
         try {
             //Your database url string,ensure it is correct
-            String url = "jdbc:mysql://localhost:3306/nsu_library";
+            String url = "jdbc:sqlite:src\\database\\library.db";
             String user = "root";
             String password = "";
 
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection(url, user, password);
             return conn;
 
