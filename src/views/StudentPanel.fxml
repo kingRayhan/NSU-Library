@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="info.rayhan.nsu_library.StudentPanelController">
-    <stylesheets>
-        <URL value="@/styles/library.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="750.0" stylesheets="@../styles/library.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="info.rayhan.nsu_library.StudentPanelController">
    <children>
-      <Label layoutX="238.0" layoutY="126.0" text="Student panel" />
+      <Pane layoutX="-4.0" layoutY="14.0" prefHeight="132.0" prefWidth="744.0" styleClass="pageHeaderBlue" stylesheets="@../styles/library.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="249.0" layoutY="38.0" styleClass="headerTxtWhite" stylesheets="@../styles/library.css" text="NSU LIBRARY">
+               <font>
+                  <Font name="LemonMilk" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="46.0" layoutY="169.0" prefHeight="386.0" prefWidth="663.0" styleClass="blueborderpane" stylesheets="@../styles/library.css">
+         <children>
+            <Label styleClass="blueLabel" stylesheets="@../styles/library.css" text="STUDENT PANEL">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="268.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/zoom-out.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="265.0" layoutY="250.0" mnemonicParsing="false" onAction="#searchBooks" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SEARCH BOOKS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="101.0" fitWidth="112.0" layoutX="476.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/settings.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="487.0" layoutY="250.0" mnemonicParsing="false" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="SETTINGS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="284.0" layoutY="331.0" mnemonicParsing="false" onAction="#logout" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="LOGOUT">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="97.0" fitWidth="103.0" layoutX="98.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/list.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="107.0" layoutY="250.0" mnemonicParsing="false" onAction="#BookList" styleClass="borderbtnBlack" stylesheets="@../styles/library.css" text="BOOK LIST">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
