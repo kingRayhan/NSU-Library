@@ -1,5 +1,7 @@
 package database;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,12 +18,10 @@ public class DbConnection {
     public Connection Connect() {
         try {
             //Your database url string,ensure it is correct
-            String url = "jdbc:sqlite:src\\database\\library.db";
-            String user = "root";
-            String password = "";
-
+            Path dbPath = Paths.get("src", "database", "library.db").toAbsolutePath().normalize();
+            String url = "jdbc:sqlite:" + dbPath;
             Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection(url, user, password);
+            Connection conn = DriverManager.getConnection(url);
             return conn;
 
         } catch (ClassNotFoundException | SQLException ex) {
