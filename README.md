@@ -4,7 +4,7 @@ A simple library management system built with JavaFX and JDBC.
 
 ## Run with Gradle
 
-From `/home/runner/work/NSU-Library/NSU-Library`:
+From the project root directory:
 
 ```bash
 ./gradlew run
