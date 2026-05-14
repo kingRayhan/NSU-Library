@@ -1,5 +1,7 @@
 package database;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,7 +18,8 @@ public class DbConnection {
     public Connection Connect() {
         try {
             //Your database url string,ensure it is correct
-            String url = "jdbc:sqlite:src\\database\\library.db";
+            Path dbPath = Paths.get("src", "database", "library.db").toAbsolutePath().normalize();
+            String url = "jdbc:sqlite:" + dbPath;
             String user = "root";
             String password = "";
 
