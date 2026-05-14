@@ -20,11 +20,8 @@ public class DbConnection {
             //Your database url string,ensure it is correct
             Path dbPath = Paths.get("src", "database", "library.db").toAbsolutePath().normalize();
             String url = "jdbc:sqlite:" + dbPath;
-            String user = "root";
-            String password = "";
-
             Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection(url, user, password);
+            Connection conn = DriverManager.getConnection(url);
             return conn;
 
         } catch (ClassNotFoundException | SQLException ex) {
